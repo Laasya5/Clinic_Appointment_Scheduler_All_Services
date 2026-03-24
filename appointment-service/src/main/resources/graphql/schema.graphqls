@@ -1,0 +1,19 @@
+type Doctor {
+    doctorName: String
+    availabilityDate: String
+    totalAppointments: Int
+    remainingAppointments: Int
+    appointments: [Appointment]
+}
+
+type Appointment {
+    appointmentId: ID
+    patientName: String
+    appointmentDate: String
+    appointmentTime: String
+    status: String
+}
+
+type Query {
+    doctors: [Doctor]
+}

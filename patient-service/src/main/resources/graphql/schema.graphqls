@@ -1,0 +1,39 @@
+type Query{
+    patients:[Patient]
+    patientById(id: ID):Patient
+}
+
+type Subscription {
+    patientAdded: Patient
+}
+
+type Mutation{
+    createPatient(patient: PatientInput): Patient
+    updatePatient(id:ID, patient: PatientInput): Patient
+    deletePatient(id:ID): Boolean
+}
+
+input PatientInput{
+    name: String
+    age: Int
+    gender: String
+    bloodGroup: String
+    chronicConditions: [String]
+    previousIllnesses: [String]
+    currentMedications: [String]
+    phoneNumber: String
+    email: String
+}
+
+type Patient{
+    id:ID
+    name: String
+    age: Int
+    gender: String
+    bloodGroup: String
+    chronicConditions: [String]
+    previousIllnesses: [String]
+    currentMedications: [String]
+    phoneNumber: String
+    email: String
+}
